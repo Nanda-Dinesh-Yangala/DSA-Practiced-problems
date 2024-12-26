@@ -1,0 +1,652 @@
+Recursion DSA Questions
+
+
+...................................................Recursion Questions with kunal 😍................................................
+
+public class Recursion_easy_questions {
+    public static void main(String[] args) {
+        fun1(5);
+    }
+
+    static void fun1(int n){
+     if(n==0){
+         return ;
+     }
+       System.out.println(n);  // if we want to print reverse like 12345 just reverse sout ans fun1(n-1)below thats it we will get.
+     fun1(n-1);
+
+    }
+
+}
+output:-
+5
+4
+3
+2
+1
+............................................................ printing Factorial........................................................
+public class FactorialsInRecursion {
+    public static void main(String[] args) {
+        fact(5);
+        System.out.println(fact(5));
+    }
+    static int fact(int n){
+        if (n<=1){
+            return 1;
+        }
+        return n * fact(n-1);
+    }
+}
+
+out:-
+120
+.................................................................printing sum in recursion.........................................
+
+public class FactorialsInRecursion {
+    public static void main(String[] args) {
+
+        System.out.println(fact(60));
+    }
+    static int fact(int n){
+        if (n<=1){
+            return 1;
+        }
+        return n + fact(n-1);
+    }
+}
+out:-
+1830
+............................................................     ReverseNumber       .........................................................
+public class ReverseNumber {
+        public static void main(String[] args) {
+            int number=12345;
+
+            System.out.println(reverse(number));
+
+        }
+        static int reverse(int n){
+            int revs=0;
+            for(int i=n;i!=0;i/=10){
+                int digit=i%10;
+                revs=revs*10+digit;
+            }
+            return revs;
+        }
+    }
+outpp:-
+54321
+.....................................................................CountNumbers..................................................................
+
+public class CountNumbers {
+    public static void main(String[] args) {
+        int n=3020406;
+        System.out.println(counting(n));
+    }
+static int counting(int n){
+        int count=0;
+        while(n!=0){
+            int digit=n%10;
+            if(digit==0){
+                count++;
+            }
+            n/=10;
+        }
+        return count;
+}
+
+//Both r same code  above one r else below one. 
+
+    static int Counting(int n){
+    int count=0;
+
+    while(n!=0){
+        int digit=n%10;
+        if(digit ==2){
+            count++;
+        }
+        n/=10;
+    }
+    return count;
+}
+
+}
+outp:-
+3
+..................................................................  counting_num_using_Recursion  ...............................................
+public class counting_num_using_Recursion {
+    public static void main(String[] args) {
+        System.out.println(count(30402));
+
+    }
+    static int count(int n){
+        return helper(n,0);
+
+    }
+    static int helper(int n,int c){
+        if(n==0){
+            return c;
+        }
+        int rem = n%10;
+        if(rem == 0){
+            return helper(n/10,c+1);
+        }
+        return helper(n/10,c);
+    }
+}
+
+.................................................1342. Number of Steps to Reduce a Number to Zero.......................
+
+https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/description/
+
+class Solution {
+    public int numberOfSteps(int num) {
+        
+        return helper(num,0);
+    }
+    
+    int helper(int num,int steps){
+        if(num==0){
+            return steps;
+        }
+        if(num%2==0){
+            return helper((num/2),steps+1);
+        }else{
+            return helper((num-1),steps+1);
+        }
+    }
+}
+...........................................................Sorting_check_Using_Recursion..................................................
+
+import java.util.Arrays;
+
+public class Sorting_check_Using_Recursion {
+    public static void main(String[] args) {
+        int arr[]={2,3,4,6,8,9};
+
+
+        System.out.println(sorted(arr,0));
+
+    }
+    static boolean sorted(int arr[],int index){
+        if(index==arr.length-1){
+            return true;
+        }
+        return arr[index]<arr[index+1] && sorted(arr,index+1);
+    }
+}
+outp:-
+true
+
+..........................................................Recursion_IN_LinearSearch.....................................
+//check the target element is present in that array r not using o(n).Linear Search
+
+public class Recursion_IN_LinearSearch {
+    public static void main(String[] args) {
+        int arr[] = {3, 7, 9, 31, 2, 44, 22};
+//        int target=44;
+        System.out.println(findIndex(arr, 44, 0));
+    }
+
+    static boolean linear(int arr[], int target, int index) {
+
+        if ( index == arr.length) {
+            return false;
+        }
+//        if(arr[index] == target){
+//            return true;
+//        }
+        return arr[index] == target || linear(arr, target, index + 1);
+
+    }
+
+
+// this below code is to print index position 🫡.
+
+    static int findIndex(int arr[], int target, int index) {
+
+        if (index == arr.length) {
+            return -1;
+        }
+
+        if(arr[index]==target){
+            return index;
+        }else{
+            return findIndex(arr,target,index+1);
+        }
+
+    }
+
+}
+......................................................ArrayList_in_Recursion......................................
+First way :-
+
+
+import java.sql.Array;
+import java.util.ArrayList;
+
+public class ArrayList_in_Recursion {
+    public static void main(String[] args) {
+        int arr[]={3,5,2,6,9,22};
+        findAllIndex(arr,9,0);
+        System.out.println(list);
+
+    }
+    static ArrayList<Integer>list=new ArrayList<>();
+    static  void findAllIndex(int arr[],int target,int index){
+        if(index==arr.length){
+            return;
+        }
+        if(arr[index]==target){
+            list.add(index);
+        }else{
+            findAllIndex(arr,target,index+1);
+        }
+    }
+
+}0utp:-
+[4]
+if same elements r present in the array that will store in he array.
+
+........................................................Another way to write ArrayList in recursion...................................
+import java.sql.Array;
+import java.util.ArrayList;
+
+public class ArrayList_in_Recursion {
+    public static void main(String[] args) {
+        int arr[]={3,5,2,6,9,6,22};
+
+        System.out.println(findAllIndex(arr,6,0,new ArrayList<>()));
+
+    }
+
+    static  ArrayList<Integer> findAllIndex(int arr[],int target,int index,ArrayList<Integer>list){
+        if(index==arr.length){
+            return list;
+        }
+        if(arr[index]==target){
+            list.add(index);
+        }
+           return findAllIndex(arr,target,index+1,list);
+
+    }
+
+}
+outp:-
+[3,5]
+.....................................reverse one ...............................................................
+public class Patters_In_Recursion {
+    public static void main(String[] args) {
+        triangle(4,0);
+    }
+    static void triangle(int r,int c){
+        if(r==0){
+            return;
+        }
+        if(c<r){
+            System.out.print("*");
+            triangle(r,c+1);
+        }else {
+
+            System.out.println(" ");
+            triangle(r-1,0);
+        }
+    }
+}
+outp:-
+**** 
+*** 
+** 
+* 
+......................................................pattern in recursion...............................................
+public class Recursion_pattern {
+    public static void main(String[] args) {
+ triangle(5,0);
+    }
+   static void triangle(int r,int c){
+        if(r==0){
+            return;
+        }
+        if(c<r){
+
+            triangle(r,c+1);
+            System.out.print("* ");
+        }else {
+
+            triangle(r-1,0);
+            System.out.println();
+        }
+   }
+}
+outp:-
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+.............................................................SelectionSort_In _recursion..................................................
+import java.util.Arrays;
+
+public class SelectionSort_Using_Recursion {
+    public static void main(String[] args) {
+        int arr[]={5,22,2,45,1,88};
+        selection(arr,arr.length,0,0);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void selection(int arr[],int r,int c,int max){
+        if(r==0){
+            return;
+        }
+        if(c < r){
+
+            if(arr[c]>arr[max]){
+                selection(arr,r,c+1,c);
+            }else{
+                selection(arr,r,c+1,max);
+            }
+
+        }else{
+            int temp=arr[max];
+            arr[max]=arr[r-1];
+            arr[r-1]=temp;
+            selection(arr,r-1,0,0);
+        }
+    }
+}
+outp:-
+[1, 2, 5, 22, 45, 88]
+
+..............................................................BubbleSort_in_Recursion....................................................
+
+import java.util.Arrays;
+
+public class BubbleSort_in_Recursion {
+    public static void main(String[] args) {
+        int arr[]={4,5,2,3,1};
+        bubble(arr,arr.length-1,0);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void bubble(int arr[],int r,int c){
+        if(r==0){
+            return;
+        }
+
+        if(c<r){
+            if(arr[c] > arr[c+1]){
+                swap(arr,c,c+1);
+            }
+            bubble(arr,r,c+1);
+        }
+
+        bubble(arr,r-1,0);
+    }
+    static void swap(int arr[],int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}
+outp:-
+[1,2,3,4,5]
+....................................................................................................
+import java.util.Arrays;
+
+public class Merge_Sort_Telusko {
+    public static void main(String[] args) {
+        int arr[]={6,3,75,22,4,89,11};
+
+        for(int n:arr){
+            System.out.print(n+" ");
+
+        }
+        mergesort(arr,0,arr.length-1);
+
+        System.out.println("after sorting");
+        for(int n:arr){
+            System.out.print(n+" ");
+        }
+       // System.out.println(Arrays.toString(arr));
+    }
+    static void mergesort(int arr[],int l,int r){
+        if(l<r){
+            int mid=l+(r-l)/2;
+            // this is how we r dividing the array.
+            mergesort(arr,l,mid);
+            mergesort(arr,mid+1,r);
+
+            merge(arr,l,mid,r);
+        }
+    }
+
+     static void merge(int[] arr, int l, int mid, int r) {
+// if we want the size of first array --> mid-l+1
+         //here l starts from 0 index we have to add +1 becau,mid is represnt..
+        // the size of the array. it reprsent index value.
+        int n1= mid - l + 1;   //it is for larr[];
+        int n2= r - mid ; //this is for rarr[];
+
+        int larr[]=new int[n1];//here we dont know the size of the array,that why we create n1 and n2.
+        int rarr[]=new int[n2];
+
+        //now we need to copy the values see in book for better understing copy values
+         //we r using for loop to copy values
+         for(int x=0;x<n1;x++){
+             larr[x] = arr[/*here we need to start from left so */ l+x];
+         }
+         for(int x=0;x<n2;x++){
+             rarr[x] = arr[/*h */ mid+1+x];
+         }
+        // now merging starts from here🤯.
+         int i=0;//first arr will handel i
+         int j=0; // 2nd arr handles j
+         int k=l;  // k is counter
+
+         while(i<n1 && j<n2){
+             if(larr[i] <= rarr[j]){
+                 //adding to the main array after sorting.
+                 arr[k] = larr[i];
+                 //we need no move larr next pass means i++
+                 i++;
+
+             }else{
+                 arr[k] = rarr[j];
+                 //we need no move rarr next pass means j++
+                 j++;
+             }
+             k++;// what ever the while larr r else rarr will add in k so we will do this
+         }
+         // this for remaining last arrays
+         while(i<n1){
+             arr[k] = larr[i];
+             i++;
+             k++;
+         }
+
+         while(j<n2){
+             arr[k] = rarr[j];
+             j++;
+             k++;
+         }
+    }
+
+}
+outp:-
+6 3 75 22 4 89 11 after sorting
+3 4 6 11 22 75 89 
+....................................................Same one as above merge sort............................................................
+
+import java.util.Arrays;
+
+public class Merge_Sort_Telusko {
+    public static void main(String[] args) {
+        int arr[]={6,3,75,22,4,89,11};
+
+//        for(int n:arr){
+//            System.out.print(n+" ");
+//
+//        }
+        mergesort(arr,0,arr.length-1);
+
+        // System.out.println("after sorting");
+        for(int n:arr){
+            System.out.print(n+" ");
+        }
+       System.out.println(Arrays.toString(arr));
+    }
+    static void mergesort(int arr[],int start,int end){
+        if(start<end){
+            int mid=start+(end-start)/2;
+            // this is how we end dividing the array.
+            mergesort(arr,start,mid);
+            mergesort(arr,mid+1,end);
+
+            merge(arr,start,mid,end);
+        }
+
+    }
+
+     static void merge(int[] arr, int start, int mid, int end) {
+// if we want the size of first array --> mid-start+1
+         //here start starts from 0 index we have to add +1 becau,mid is not represnting..
+        // the size of the array. it reprsent index value.
+        int n1= mid - start + 1;   //it is for startarr[];
+        int n2= end - mid ; //this is for endarr[];
+
+        int startarr[]=new int[n1];//here we dont know the size of the array,that why we create n1 and n2.
+        int endarr[]=new int[n2];
+
+        //now we need to copy the values see in book for better understing copy values
+         //we end using for loop to copy values
+
+         for(int x=0;x<n1;x++){
+             startarr[x] = arr[/*here we need to start from left so */ start+x];
+         }
+         for(int x=0;x<n2;x++){
+             endarr[x] = arr[/*h */ mid+1+x];
+         }
+        // now merging starts from here🤯.
+         int i=0;//first arr will handel i
+         int j=0; // 2nd arr handles j
+         int k=start;  // k is counter
+
+         while(i<n1 && j<n2){
+             if(startarr[i] <= endarr[j]){
+                 //adding to the main array after sorting.
+                 arr[k] = startarr[i];
+                 //we need no move startarr next pass means i++
+                 i++;
+
+             }else{
+                 arr[k] = endarr[j];
+                 //we need no move endarr next pass means j++
+                 j++;
+             }
+             k++;// what ever the while startarr end else endarr will add in k so we will do this
+         }
+         // this for remaining last arrays
+         while(i<n1){
+             arr[k] = startarr[i];
+             i++;
+             k++;
+         }
+
+         while(j<n2){
+             arr[k] = endarr[j];
+             j++;
+             k++;
+         }
+    } 
+
+}
+outp:-
+
+[4, 5, 12, 32, 48, 75, 88]
+...................................................           Quick Sort               ................................................
+
+import java.util.Arrays;
+
+public class QuickSort {
+    public static void main(String[] args) {
+
+        int arr[]={5,4,3,2,1};
+        sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void sort(int nums[],int low ,int high){
+        if(low >= high){
+            return;
+        }
+        int s=low;
+        int e=high;
+        int m = s+(e-s)/2;
+        int pivot=nums[m];
+//also a reason why if it is already sorted it will not swap.
+        while(s <= e) {
+
+            while (nums[s] < pivot) {
+                s++;
+            }
+            while (nums[e] > pivot) {
+                e--;
+            }
+
+            if (s <= e) {
+                int temp = nums[s];
+                nums[s] = nums[e];
+                nums[e] = temp;
+                s++;
+                e--;
+            }
+        }
+        // now my pivot is at correct index please sort two halfs.
+        sort(nums,low,e);
+        sort(nums,s,high);
+
+
+    }
+}
+outp:-
+[1,2,3,4,5]
+..............................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

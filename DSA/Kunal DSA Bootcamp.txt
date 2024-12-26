@@ -1,0 +1,1956 @@
+...............................................................Kunal Kushwaha........................................................ 
+Taking input from the user :'
+.................................
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Hay pls enter ur roll number:-");
+        int rollnumber=sc.nextInt();
+
+        System.out.println("hay ur rollnumber is :-" + rollnumber);
+    }
+}
+.............................................................................................................
+--> Taking numbers from users and adding the values using scanner
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int  num1 =sc.nextInt();
+       int num2=sc.nextInt();
+       int sum=num1+num2;
+        System.out.println("Sum is :-" + sum);
+}
+    }
+
+...................................................................................................
+--> Using float we r adding this 
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       float  num1 =sc.nextFloat();
+       float num2=sc.nextFloat();
+       float sum=num1+num2;
+        System.out.println("Sum is :-" + sum);
+}
+    }
+.........................................................................................
+
+
+class Demo123456{
+    public static void main(String[]args) {
+    int n=5;
+    for(int i=0;i<=5;i++){
+        System.out.println("*".repeat(i));
+    }
+
+    }
+}
+
+outp:-
+
+*
+**
+***
+****
+*****
+.repeat() is used to print the "*" this one how many times we want to print.
+
+.........................................................................................................................................
+
+ printing max value  which one will give max number to the user that one will print.
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       int c=sc.nextInt();
+       int max=a;
+       if(b>max) {
+           max = b;
+       }
+           if(c>max){
+               max=c;
+       }
+        System.out.println(max);
+    }
+}
+
+...........................................................................................................................
+Using charAt index (0) we w ill print characters in a word .
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+//       Scanner sc=new Scanner(System.in);
+       String name="Nanda";
+       System.out.println(name.charAt(0));
+    }
+}
+
+.....................................................................................................................................
+another way to print highest number 
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+       // int a=10;
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+//
+//    int max=0;
+//    if(a>b ){
+//        max=b;
+//    }
+//    if(c>max){
+//        max=c;
+//
+//    }
+//        System.out.println(max);
+
+        int max=Math.max(Math.max(a ,b),c);
+        System.out.println(max);
+
+    }
+    }
+........................................................................................................
+
+Printing lower case and upper case form user input that type we can print that one is lower case r upper case
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    char ch=in.next().charAt(0);
+    if(ch >='a' &&  ch <='z'){
+        System.out.println("lower case");
+    }else {
+        System.out.println("upper case");
+    }
+
+    }
+    }
+
+..............................................................................................................
+Fibinoci series 
+
+import java.util.Scanner;
+
+public class Demo3 {
+    public static void main(String[] args) {
+
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int a=0;   int b=1;
+    int count=2;
+
+    while(count <=n){
+        int temp=b;
+        b=b+a;
+        a=temp;
+        count++;
+    }
+        System.out.println(b);
+
+    }
+    }
+.................................................................................................
+					  Using switch case program :-
+
+import java.util.Scanner;
+
+public class switchDemo1 {
+    public static void main(String[] args) {
+       Scanner in=new Scanner (System.in);
+       String fruits=in.next();
+       switch(fruits){
+           case "apple":
+               System.out.println("Apple is a red color fruit");
+               break;
+           case "banana":
+               System.out.println("yellow color fruit is banana");
+               break;
+           case "mango":
+               System.out.println("king a fruits");
+               break;
+           default:
+               System.out.println("Enter a valid fruit name");
+
+
+       }
+
+
+    }
+}
+//it will not accept same names(duplicate names)
+........................................................................................................
+	 -> This is another way of writing switch case method in java
+	--> Go to switch statement ->click Alt +enter ->click enhance switch Statement. 
+
+
+import java.util.Scanner;
+
+public class switchDemo1 {
+    public static void main(String[] args) {
+       Scanner in=new Scanner (System.in);
+       String fruits=in.next();
+        switch (fruits) {
+            case "apple" -> System.out.println("Apple is a red color fruit");
+            case "banana" -> System.out.println("yellow color fruit is banana");
+            case "mango" -> System.out.println("king a fruits");
+            default -> System.out.println("Enter a valid fruit name");
+        }
+
+
+    }
+}
+
+...................................................................................................
+                                         Switch Case program
+
+
+import java.util.Scanner;
+
+class switchDemo1{
+    public static void main (String args[]){
+       Scanner in=new Scanner(System.in);
+       int Days=in.nextInt();
+       switch(Days) {
+           case 1:
+               System.out.println("monday");
+               break;
+           case 2:
+               System.out.println("Tuesday");
+               break;
+           case 3:
+               System.out.println("wednesday");
+               break;
+           case 4:
+               System.out.println("Thrusday");
+               break;
+           case 5:
+               System.out.println("Friday");
+               break;
+           case 6:
+               System.out.println("Saturday");
+               break;
+           case 7:
+               System.out.println("Sunday");
+               break;
+           default:
+           }
+               System.out.println("Enter a valid number:- ");
+
+       }
+
+    }
+....................................................................................................................
+
+                                                           Nested Switch Case
+
+
+
+
+
+
+
+
+
+
+
+.................................................................................................................
+					Functions
+
+--> we r using functions and taking inputs from user and then adding and printing that values.
+
+import java.util.*;
+public class functions1 {
+    public static void main(String args[]){
+       sum();
+    }
+    static void sum(){
+        Scanner in=new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        int sum=a+b;
+        System.out.println(sum);
+    }
+}
+.............................................................................................
+This is second type using return type we can print 
+
+
+import java.util.*;
+public class functions1 {
+    public static void main(String args[]){
+       int ans=sum();
+       System.out.println(ans);
+    }
+    static int sum(){
+        Scanner in=new Scanner(System.in);
+        int a=in.nextInt();
+        int b=in.nextInt();
+        int sum=a+b;
+        return sum;
+    }
+}
+............................................................................................................................ 
+						Using parameters we r printing String in this function
+
+import java.util.*;
+public class functions1 {
+    public static void main(String args[]){
+//       int ans=sum();
+//       System.out.println(ans);
+        String ans=name("nanda");
+        System.out.println(ans);
+
+    }
+//    static int sum(){
+//        Scanner in=new Scanner(System.in);
+//        int a=in.nextInt();
+//        int b=in.nextInt();
+//        int sum=a+b;
+//        return sum;
+//    }
+    static String name(String s2){
+        String Add=s2;
+        return Add;
+    }
+}
+.............................................................................................................
+
+import java.util.*;
+public class functions1 {
+    public static void main(String args[]){
+//       int ans=sum();
+//       System.out.println(ans);
+//        String ans=name("nanda");
+//        System.out.println(ans);
+        int ans=sum(3 ,7);
+        System.out.println(ans);
+
+    }
+//    static int sum(){
+//        Scanner in=new Scanner(System.in);
+//        int a=in.nextInt();
+//        int b=in.nextInt();
+//        int sum=a+b;
+//        return sum;
+//    }
+    static String name(String s2){
+        String Add=s2;
+        return Add;
+    }
+    static int sum(int a,int b){
+        int sum1=a+b;
+        return sum1;
+    }
+}
+...........................................Swapping values from a to b ................................
+import java.util.*;
+public class functions1 {
+    public static void main(String args[]) {
+        int a=10;
+        int b=20;
+        int temp=a;
+       a=b;
+       b=temp;
+        System.out.println(a+" "+b);
+
+
+
+    }
+}
+
+output:-a=20,b=10;
+.........................................................................................................
+		changing array  index[0]position using functions😉
+
+import java.util.*;
+
+public class swap {
+    public static void main(String[] args) {
+    int arr[]={6,2,4,6,32};
+    change(arr);
+    System.out.println(Arrays.toString(arr));
+    }
+
+    static void change(int[]nums){
+         nums[0]=99;
+    }
+    }
+outp:-{99,2,4,6,32}
+.........................................................................................
+
+					same as above one 
+import java.util.*;
+
+public class swap {
+    public static void main(String[] args) {
+   int a[]={2,3,5,3,5};
+   change(a);
+   System.out.println(Arrays.toString(a));
+    }
+
+    static void change(int[]a){
+        a[0]=88;
+    }
+
+    }
+................................................................................................
+					BLOCK SCOPE
+
+what ever the code we wrote inside that we can access inside ,but we can change that variable values inside that block
+
+import java.util.*;
+
+public class swap {
+    public static void main(String[] args) {
+     int a=10;
+     int b=20;
+        {
+            a=100;
+            int c=30;
+            System.out.println(a);
+        }
+        // System.out.println(c);
+        // here we cant access variable c because that variable is inside the block so we cannot access that. 
+        System.out.println(a);
+    }
+    }
+...................................................................................................................
+					SHADOWING
+--> It means using same variable more than one time is called shadowing
+
+public class shadowing
+{
+   static  int x=20;
+    public static void main(String[] args)
+    {
+int x=100;
+System.out.println(x);
+fun();
+
+    }
+static void fun(){
+    System.out.println(x);
+}
+}
+
+......................................................VarArgs......................................................
+					VariableArguments
+import java.util.Arrays;
+
+public class VarArgs {
+    public static void main(String[]args){
+          fun(2,3,4,5,3,5,3);
+        //fun("nanda","dinesh","d","ert");
+    }
+
+    static void fun(int...v){
+//if we dont know how many inputs r else paraments we want to take that time with the help of this we can print directly in fun like there we mentioned in fun.........
+
+        System.out.println(Arrays.toString(v));
+    }
+}
+
+.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+						Multiple
+
+we can give this varArgs like this
+
+  static void fun(int a,int b,String...v){
+
+//like this we can give this varargs if we want to print...Note:-this ...v must and should be placed in  last only.
+
+} 
+
+import java.util.Arrays;
+
+public class VarArgs {
+    public static void main(String[]args){
+          fun("nanda","dinesh",2,4,6,43,3);
+        //fun("nanda","dinesh","d","ert");
+        multiple(2,3,"nanda","ds","sd");
+    }
+
+    static void fun(String a,String b,int...v){
+        System.out.println(Arrays.toString(v));
+    }
+    static void multiple(int a,int b,String...v){
+        System.out.println(Arrays.toString(v));
+    }
+}
+.......................................................................................................................
+import java.util.Arrays;
+class VarArgs{
+    static void bad(String a,int...v){
+        System.out.print(a);
+        System.out.println(Arrays.toString(v));
+
+    }
+    static void bad(int a,String...v ){
+        System.out.print(a);
+        System.out.println(Arrays.toString(v));
+
+    }
+
+    public static void main(String args[]){
+         bad(1,"e","w","wf","wef","wef","we");
+         bad("fs",1,32,4,56,4,34,64,35);
+    }
+}
+.........................................................................................................................................
+
+
+This is not executed properly.................
+
+Got it here is the code:-
+
+import java.util.Arrays;
+
+public class VarArgs {
+    public static void main(String[]args){
+          fun("nanda","dinesh",2,4,6,43,3);
+        multiple(2,3,"nanda","ds","sd");
+    }
+
+    static void fun(String a,String b,int...v){
+        System.out.println(Arrays.toString(v));
+    }
+    static void multiple(int a,int b,String...v){
+        System.out.println(a+" "+b +Arrays.toString(v));like his it will work
+    }
+}
+
+.........................................................................................................................
+						overloding
+//                                           Function overloading
+
+
+
+public class Overloading {
+
+    static void gen(int a,int b){
+
+        System.out.println(a+" "+b);
+    }
+    static void gen(int a){
+        System.out.println(a);
+    }
+
+
+    public static void main(String[]args){
+gen(20 ,34);
+gen(3);
+    }
+}
+
+......................................................................................................................
+This one is also a overloading using same function name more than one time but parameters r different.it s called overloading.
+
+
+
+class VarArgs{
+    static void fun(int a,int b,String c){
+        System.out.println(a+" "+b+" "+c);
+    }
+    static void fun(int a,int b){
+        System.out.println(a+" "+b);
+    }
+    public static void main(String []args){
+
+      //  fun(3,4,"sdsd");
+        fun(2,4,"dvf");
+
+    }
+}
+....................................................................2D ARRAYS..................................................................
+
+we can initialize 2d arrays like this 
+
+import java.util.Arrays;
+class arrays1{
+
+
+    public static void main(String args[]){
+        int arr[][]={
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
+      System.out.println(arr[0][0]);
+    }
+} 
+
+out:-
+1
+....................................................................................................................
+
+public class colNoFixed {
+    public static void main(String args[]){
+         int arr[][]={
+                 {1,2,3,4},------0 row
+                 {3,4},    -------1row
+                 {3,5,2},----------2row
+                 {2,4,3,3}	----3 row     this will print 
+         };
+         for(int row=0;row<arr.length;row++){
+             System.out.println(row);
+         }
+    }
+}
+
+This one will print how many rows of arrays r present that one will printing.
+0
+1
+2
+3
+......................................................................................................................................
+							         2D Array
+							
+public class colNoFixed {
+    public static void main(String args[]){
+         int arr[][]={
+                 {1,2,3,4},
+                 {3,4},
+                 {3,5,2},
+                 {2,4,3,3}
+         };
+         for(int row=0;row<arr.length;row++){
+          for(int col=0;col<arr[row].length;col++){
+              System.out.print(arr[row][col]+ "  ");
+          }
+        System.out.println();
+         }
+    }
+}
+
+--> Here this one printing the matrix of the array.
+
+1  2  3  4  
+3  4  
+3  5  2  
+2  4  3  3  
+
+..................................................................................................................................
+								ArrayList
+
+Syntax :-	ArrayList<Integer>list=new ArrayList<>(this one is capacity:-10);
+
+--> To Add number in list we need to give 
+list.add(23);
+list.add(45);
+--> To change r update number we will give syntax
+list.set(int index,int number);
+
+list.set(0,99);
+--> To check  numbers we use list.contains(23); if it is present in that arraylist then it will give true.
+
+
+
+import java.util.*;
+public class MyArrayList {
+    public static void main(String[] args) {
+        ArrayList<Integer> list=new ArrayList<>(12);
+           list.add(23);
+           list.add(123);
+           list.add(45);
+           list.add(345);
+           list.add(13);
+
+           list.contains(23);
+
+           System.out.println(list);
+        list.set(0,99);
+           System.out.println(list.contains(1243));
+        System.out.println(list);
+
+    }
+}
+
+outp:-
+
+[23, 123, 45, 345, 13]
+false
+[99, 123, 45, 345, 13]
+
+Process finished with exit code 0
+..........................................................................................................................................
+import java.util.*;
+public class MyArrayList {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> list=new ArrayList<>(12);
+            Scanner in=new Scanner(System.in);
+
+
+//           list.add(23);
+//           list.add(123);
+//           list.add(45);
+//           list.add(345);
+//           list.add(13);
+//
+//           list.contains(23);
+//
+//           System.out.println(list);
+//        list.set(0,99);
+//        list.remove(1);
+//           System.out.println(list.contains(1243));
+//        System.out.println(list);
+        for(int i=0;i<5;i++){
+            list.add(in.nextInt());
+        }
+            System.out.println(list);
+    }
+}
+........................................................................................................................................
+								MultiArray
+import java.util.*;
+
+public class MultiDimensionalArrayList {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        ArrayList<ArrayList<Integer>> list=new ArrayList<>(10);
+
+
+        //initialization
+        for(int i=0;i<5;i++){
+            list.add(new ArrayList<>());
+        }
+        //add elements
+        for(int i=0;i<3;i++){
+            for(int j=0;j<5;j++){
+                list.get(i).add(in.nextInt());
+            }
+        }
+        System.out.println(list);
+    }
+}
+
+outp:-
+
+1 2 3 4 5 56 
+2 23 4 4 4 
+2243 34 34 3 35
+
+[[1, 2, 3, 4, 5], [56, 2, 23, 4, 4], [4, 2243, 34, 34, 3], [], []]
+34
+Process finished with exit code 0
+...................................................................................................................................................
+.....................................................................DSA...........................................................................
+...............................................................LINEAR SEARCH ALGORITHM.............................................................
+
+
+public class LinearSearchAlgorithm {
+
+    public static void main(String[] args) {
+        int arr[]={2,45,76,587,34,35,57,3534,243};
+        int target=34;
+        int ans= linearSearch(arr,target);
+        System.out.println(ans);
+    }
+// search in the array: return the index if item found.
+//otherwise if item not found return -1.
+   
+ static int linearSearch(int arr[],int target){
+        if(arr.length==0){
+         return -1;
+}
+//run a for loop
+       for(int index=0;index<arr.length;index++){
+          //check for the element at every index if it is = target.
+           int element =arr[index];
+           if(element ==target){
+               return index;
+           }
+       }
+//this line will execute if none of this return statements above have executed.
+//hence the target not found.
+            return-1;
+    }
+}
+
+outp:-
+4
+.....................................................String problem in Linear Search ..................................................
+
+class LSADemo1{
+
+//                  Strings one in linear search
+    public static void main(String args[]){
+        String words[]={"a","b","d","e","f","g"};
+        String target="e";
+        int res=linearsearch(words,target);
+        System.out.println(res);
+    }
+    static int linearsearch(String[]arr,String target){
+        if(arr==null ||target==null){
+            return -1;
+        }
+
+        for(int index=0;index<arr.length;index++){
+            if(arr[index].equalsIgnoreCase(target)){
+                return index;
+            }
+        }
+        return-1;
+    }
+}
+outp:-
+
+3
+.......................................................................................................................................
+						Linear search problem - 2
+				//search the target and return the element(means printing the target number)
+
+
+public class LSABoolean {
+    public static void main(String args[]){
+        int arr[]={23,4,56,68,46,34,24,};
+        int target=68;
+        int ans=linear(arr,target);
+        System.out.println(ans);
+
+    }
+
+//search the target and return the element(means printing the target number)
+
+    public static int linear(int arr[],int target){
+        if(arr.length==0){
+            return-1;  	      // Here instead of this we can do write  --> return Integer.MAX_VALUE; This one also.
+Why means suppose -1 is also a one of the element in that array that time we will use this one r else we will use return -1 only .
+
+
+        }
+        for(int index=0;index<arr.length;index++){
+            int element=arr[index];
+            if(element==target){
+                return element;
+            }
+        }
+        return -1;
+    }
+}
+
+
+
+ex:- --> instead of the above for code  we can also write below code also
+ 
+// for(int index=start;index<end;index++){
+  //          if(arr[index]==target){
+  //            return index;
+    //        }
+      //  }
+
+
+outp:-
+
+68
+.........................................................Linear Search String ...................................................................
+.						          Q:-Search in string ?
+class LinearSearchString {
+    public static void main(String args[]){
+        String name="NandaDinesh";
+        char target='h';
+        System.out.println(linear(name,target));
+
+    }
+    static boolean linear(String str,char target){
+        if(str.length() == 0){
+        return false;
+    }
+        for(int i=0;i<str.length();i++){
+            if(target == str.charAt(i)){
+                return true;
+            }
+//            if(target.equalsIgnoreCase(Character.toString(str.charAt(i)))){
+//                return true;
+//            }
+            // In the above line u r seeing na That  is also one way to print Strings in linear search.
+             }
+                return false;
+        }
+    }
+outp:-
+
+True
+..................................................problem - 2 in Strings linear search..................................
+Q:-Search in string ?
+
+public class LSStringDemo1 {
+    public static void main(String args[]){
+        String word="kajal";
+        char target='l';
+        System.out.println(linear(word,target));
+
+    }
+    static String linear(String str,char target){
+        if(str.length() == 0){
+            return "nanda";
+        }
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==target){
+                return " nn";
+            }
+        }
+        return "m ";
+    }
+}
+...........................................................................................................................................
+
+
+public class LSStringDemo1{
+    public static void main(String args[]){
+        String word="Ganesh";
+        char target='G';
+        System.out.println(linear(word,target));
+
+    }
+    static String linear(String str,char target){
+        if(str.length()==0){
+            return "12345";
+        }
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i) == target){
+                return "correct";
+            }
+        }
+        return "678910";
+    }
+}
+outp:-
+correct
+.................................................. Search_In_Range_LinearSearch.....................................................
+
+Q:- search the number in range between start :0 and end :7 number is 6 ?
+
+import java.util.Arrays;
+public class Search_In_Range_LinearSearch {
+    public static void main(String args[]){
+        int arr[]={25,5,9,32,6,8,4,2};
+        int target=;
+        System.out.println(linear(arr,target,0,7));
+
+    }
+    static int linear(int [] arr,int target,int start,int end){
+        if(arr.length == 0){
+            return -1;
+
+        }
+        for(int index=start;index<end;index++){
+            int element=arr[index];
+            if(element==target){
+                return index;
+            }
+
+        }
+        return -1;
+    }
+}
+outp:-
+
+4 - index position.
+..........................................................Search_In_Range_LinearSearch........................................................
+
+     //arr: an array of integers (e.g., {1, 3, 5, 7, 9, 3, 2, 3}).
+//target: the integer you want to search for (e.g., 3).
+//start: the starting index of the range (e.g., 4).
+//end: the ending index of the range (e.g., 7).
+
+
+public class Search_In_Range_Example {
+    public static void main(String args[]){
+        int arr[]={1, 3, 5, 7, 9, 3, 2, 3};
+        int target =3;
+        System.out.println(linear(arr,target,4,7));
+
+    }
+    static int linear(int arr[],int target,int start,int end){
+   
+if(arr.length==0){
+    return -1;
+}
+for(int index=start;index<end;index++){
+    int element=arr[index];
+    if(element==target){
+        return index;
+    }
+}
+--> instead of the above for code  we can also write below code also
+ 
+// for(int index=start;index<end;index++){
+  //          if(arr[index]==target){
+  //            return index;
+    //        }
+      //  }
+
+
+
+        return -1;
+    }
+}
+................................................................ Finding min in array .....................................................
+
+class Demo123456 {
+    public static void main(String[] args) {
+        int arr[] = {56, 5, 27, 6, -5, -4};
+        System.out.println(min(arr));
+    }
+    //assume arr.length !=0
+    // return the minimum value in the array
+    static int min(int arr[]) {
+        int ans = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < ans) {
+                ans = arr[i];
+            }
+        }
+        return ans;
+    }
+}
+output:-
+-5
+............................................................................................................................
+Example - 2
+--------------
+
+class Minimum{
+    public static void main(String args[]){
+        int arr[]={3,-6,8,-3,88};
+        int res=min(arr);
+        System.out.println(res);
+        // System.out.println(min(arr));
+    }
+    static int min(int arr[]){
+        int ans=arr[0];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<ans){
+                ans=arr[i];
+            }
+        }
+        return ans;
+    }
+}
+......................................finding max in the array.....................................................
+class Demo123456{
+    public static void main(String args[]){
+        int arr[]={5,9,,55,7,32,23,2};
+        System.out.println(min(arr));
+    }
+    static int max(int arr[]){
+        int ans=arr[0];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]> ans){
+                ans=arr[i];
+
+            }
+        }
+        return ans;
+    }
+}
+............................................................Search_In_2D_Array..............................................
+
+ import java.sql.SQLOutput;
+ import java.util.Arrays;
+//
+//public class Two_D_Array {
+//    public static void main(String args[]){
+//    int arr[][] ={{33,3,2},
+//            {3,53,3},
+//            {4,5,3,93,23}};
+//    int target=23;
+//    int [] ans=search(arr,target);
+//    System.out.println(Arrays.toString(ans));
+//}
+//
+//static int[] search(int [][] arr,int target){
+//        for(int row=0;row<arr.length;row++){
+//            for(int col=0;col<arr[row].length;col++){
+//                if(arr[row][col]==target){
+//                    return new int[]{row,col};
+//                }
+//            }
+//        }
+//        return new int[]{-1,-1};
+//
+//}
+//}
+//
+.........................................this is another one ...................................................
+
+class Two_D_Array{
+    public static void main(String args[]){
+        int arr[][]=
+                {{3,5,6},
+                {2,4,7},
+                {3,9,12},
+                {4,8,16}};
+
+        int target=12;
+        int [] ans=TWODARRAY(arr,target);
+        System.out.println(Arrays.toString(ans));
+    }
+    static int[] TWODARRAY(int arr[][],int target){
+        for(int row=0;row<arr.length;row++){
+            for(int col=0;col<arr[row].length;col++){
+                if(arr[row][col]==target){
+                    return new int[]{row,col};
+                }
+            }
+        }
+        return new int []{-1,-1};
+    }
+}
+
+otp:-[2,2]
+....................................................finding max in 2D Arrays...................................................................
+
+public class TWO_D_Array_max {
+    public static void main(String[] args) {
+        int arr[][] = {
+            {9, 5, 6},
+            {2, 4, 7},
+            {1, 9, 12},
+            {4, 8, 16}
+        };
+        System.out.println(max(arr));  // This will now print the max value
+    }
+
+    static int max(int arr[][]) {
+        int max = Integer.MIN_VALUE;
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr[row].length; col++) {
+                if (arr[row][col] > max) {
+                    max = arr[row][col];
+                }
+            }
+        }
+        return max;  // Return the max value after all elements are checked
+    }
+}
+otput :-16
+........................................................................finding min in 2d array....................................................
+
+import static java.util.Collections.min;
+
+public class TWO_D_Array_max {
+    public static void main(String[] args) {
+        int arr[][]=
+                       {{9,5,6},
+                        {2,4,7},
+                        {1,9,12},
+                        {4,8,16}};
+
+        System.out.println(max(arr));
+
+    }
+
+
+    static int max(int arr[][]){
+        int min=Integer.MAX_VALUE;
+        for(int row=0;row<arr.length;row++){
+            for(int col=0;col<arr[row].length;col++){
+                if(arr[row][col]< min){
+                    min=arr[row][col];
+                }
+
+            }
+        }
+        return min;
+
+    }
+}
+output:-
+1
+.................................................... orderAgnostoc_BS ...........................................................................
+
+
+public class Descending_order {
+    public static void main(String[] args) {
+        int arr[]={98,86,75,64,53,44,33,12,22,11,10,8,5,2};
+     // int arr[]={1,3,4,6,8,9,12,15,26,48,59};
+      int target=5;
+        System.out.println(orderAgnostoc_BS(arr,target));
+
+    }
+    static int orderAgnostoc_BS(int arr[], int target){
+        int start=0;
+        int end=arr.length-1;
+
+        boolean isAsc = arr[start]<arr[end];
+        //we can write like this r else like this 😉.
+
+//        boolean isAsc;
+//        if(arr[start] < arr[end]){
+//            isAsc=true;
+//        }else {
+//            isAsc=false;
+//        }
+
+        while(start <= end) {
+            int mid=start+(end-start)/2;
+
+            if(arr[mid]==target){
+                return mid;
+            }
+           // here we r writing this code why means because,
+           //we dont know weather it is asccending r desending order so thats why
+           //we r writing like this if condition.
+            if(isAsc){
+
+                if(target < arr[mid]){
+                   end=mid-1;
+                } else{
+                   // if(target >arr[mid])
+                        start=mid+1;
+                }
+
+            }else{
+                //descending order aiethay 😒
+
+                if(target > arr[mid]){
+                     end=mid-1;
+                }else{
+              //  if(target < arr[mid])
+                        start=mid+1;
+                }
+
+            }
+        }
+        return -1;
+
+    }
+}
+............................................... ceiling in BInary search ...........................................................
+
+public class ceiling {
+    //colission means returning the
+    public static void main(String[] args) {
+        int arr[]={2,3,5,9,14,16,18};
+        int target=12;
+        System.out.println(bs(arr,target));
+
+    }
+    // return the smallest number greater then target number.
+
+    static int bs(int arr[],int target){
+        int start=0;
+        int end=arr.length-1;
+
+        while(start <= end){
+            int mid=start+(end-start)/2;
+            if(arr[mid]==target){
+                return mid;
+            }
+
+            if(target < arr[mid]){
+                end=mid-1;
+
+            }
+            else{
+                if(target > arr[mid]){
+                    start=mid+1;
+                }
+            }
+        }
+        return start;
+    }
+}
+output:-
+4
+.........................................................floor in binary search.............................................................
+public class Floor_In_BS {
+    public static void main(String[] args) {
+        int  arr[]={2,3,5,9,14,16,18};
+        int target=13;
+        System.out.println(floor(arr,target));
+
+    }
+    // return the greatest number <= target;
+    static int floor(int arr[],int target){
+
+        if(target > arr[arr.length-1]){
+            return -1;
+        }
+        
+        int start=0;
+        int end=arr.length-1;
+
+        while(start <=end){
+            int mid = start+(end-start)/2;
+            if(arr[mid]==target){
+                return mid;
+            }
+            if(target <arr[mid]){
+                end=mid-1;
+            }
+            else{
+                if(target > arr[mid]){
+                    start=mid+1;
+                }
+            }
+        }
+        return end;
+    }
+}
+output:-
+9
+.............................................ceiling updated one ...........................................
+
+public class ceiling {
+    //colission means returning the
+    public static void main(String[] args) {
+        int arr[]={2,3,5,9,14,16,18};
+        int target=19;
+        System.out.println(bs(arr,target));
+
+    }
+    // return the smallest number greater then target number.
+
+    static int bs(int arr[],int target){
+       
+        if(target > arr[arr.length-1]){
+            return -1;
+        }
+        
+        int start=0;
+        int end=arr.length-1;
+
+        while(start <= end){
+            int mid=start+(end-start)/2;
+            if(arr[mid]==target){
+                return mid;
+            }
+
+            if(target < arr[mid]){
+                end=mid-1;
+
+            }
+            else{
+                if(target > arr[mid]){
+                    start=mid+1;
+                }
+            }
+
+        }
+        return start;
+    }
+}
+output:-
+-1
+......................................................2D_Matrix in Binary search........................................................
+--> If the question gave in the form of ascending order ?
+import java.util.Arrays;
+
+public class TwoD_Array_In_BinarySearch {
+    public static void main(String[] args) {
+        int matrix[][] = {{5,10,15,20 },
+                       { 6,12,18,24 },
+                       { 9,18,21,27 }};
+
+        int target=27;
+        System.out.println(Arrays.toString(twodarray(matrix,target)));
+
+    }
+    static int [] twodarray(int matrix[][],int target) {
+            int r=0;
+            int c=matrix[0].length-1; // we can also write this as // int c=matrix.length;//this one aslo will work.😊
+
+            while(r < matrix.length && c >=0){
+
+                if(matrix[r][c] == target){
+                    return  new int [] {r,c};
+                }
+                if(target > matrix[r][c] ){
+                    r++;
+                }else {
+                    if(target < matrix[r][c])
+                        c--;
+                }
+            }
+             return new int[]{-1,-1};
+    }
+}
+output:-
+[2,3]
+.....................................................😉🫡 BUBBLE SORT 😉🫡........................................................
+
+
+import java.util.Arrays;
+
+public class Bubble_Sort {
+    public static void main(String[] args) {
+
+        int arr[]={46,5,89,456,98,8};
+        bubble(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static  void bubble(int arr[]){
+        boolean swapped;
+        // run the steps n-1 times
+        for(int i=0;i< arr.length;i++){
+            swapped = false;
+            //for each step,max item will come at the last respective index.
+            for(int j=1;j<arr.length-i;j++){
+                //swap if the item is smaller than the previous item😉.
+                if(arr[j] < arr[j-1]){
+                    //swap
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                    swapped = true;
+                }
+            }
+     // if u did not swap for a particular value of i,it means the  array is sorted hence stop the program.
+     if(!swapped) {   // if(swapped = false) break;
+         break;
+     }
+        }
+
+    }
+}
+output:-
+[5,8,46,89,98,456]
+.................................................Selection_sort_Algorithm😶‍🌫.............................................................
+
+import java.util.Arrays;
+
+public class Selection_sort {
+    public static void main(String[] args) {
+
+        int arr[] = {3, 1, 5, 4, 2};
+        selection(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void selection(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            // find the max item in the remaining array and swap with correct index
+            int last = arr.length - i - 1;
+            int maxIndex = getMaxIndex(arr, 0, last);
+            swap(arr, maxIndex, last);
+        }
+    }
+
+    static int getMaxIndex(int[] arr, int start, int end) {
+        int max = start;
+        //Let us Assume max present in start positon .
+        for (int i = start; i <= end; i++) {
+            if (arr[max] < arr[i]) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+
+.........................................................🫡 Insertion_sort_Algorithm 😉........................................................
+
+import java.util.Arrays;
+
+public class Insertion_sort {
+    public static void main(String args[]) {
+
+        int arr[]={5,3,4,1,2,6};
+         insertion(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void insertion(int arr[]){
+        for(int i=0;i< arr.length-1;i++){
+            for(int j=i+1;j>0;j--){
+                if(arr[j] < arr[j-1]){
+                    swap(arr,j,j-1);
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    static void swap(int [] arr ,int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+
+    }
+
+}
+output:-
+[1,2,3,4,5,6]
+..........................................  INSERTION ANOTHER type . same problem but little bit change......................................
+Demo-1 of same problem:-
+
+import java.util.Arrays;
+
+public class insertion_dem0_Practice {
+    public static void main(String[] args) {
+        int arr[]={4,6,3,6,3,2,1};
+        demo(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void demo(int arr[]){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j>0;j--){
+                if(arr[j]<arr[j-1]){
+
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+                else{
+                    break;
+                }
+            }
+        }
+    }
+}
+output:-
+[1,2,3,3,4,6,6]
+.............................................................Cyclic_Sort_Algorithm..........................................................
+import java.util.Arrays;
+
+public class Cyclic_Sort_Algorithm {
+    public static void main(String[] args) {
+        int arr[]={5,3,6,2,1,4};
+        cyclicsort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void cyclicsort(int arr[]) {
+        int i=0;
+        while(i < arr.length){
+            int correct = arr[i] - 1;
+            if(arr[i] != arr[correct]){
+                swap(arr,i,correct);
+            }else {
+                i++;
+            }
+        }
+    }
+
+    static void swap(int arr[],int first,int second){
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}
+output:-
+[1,2,3,4,5,6]
+.....................................................       Recursion in DSA        .............................................................
+
+public class Recursion1 {
+    public static void main(String[] args) {
+      print1(1);
+    }
+    static void print1(int n){
+
+        // function calling itself is called recursion.
+
+	//BASE CONDITION 
+
+        if(n == 5){
+            System.out.println(5);
+            return;
+        }
+	//body
+        System.out.println(n);
+
+        
+        // if you r calling a function again and again, you can treat it as a seperate call in the stack.🤷‍♀
+	//this is called last function call.
+        print1(n+1); // this is called tail recursion here.  //recursion call
+    }
+}
+........................................................Recursion example fibnoci ..........................................
+
+public class Finbnoci_Recursion {
+    public static void main(String[] args) {
+        int ans=fibo(7);
+        System.out.println(ans);
+    }
+    static int fibo(int n){
+        //base condition
+        if(n < 2){
+            return n;
+        }
+
+        return fibo(n-1)+fibo(n-2);
+    }
+}
+
+output:-
+13
+.....................................................      Binary_In_Recursion    ..........................................................
+
+import java.util.Arrays;
+
+public class Binary_In_Recursion {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,55,66,78};
+        int target=66;
+        int ans = search(arr,target,0,arr.length-1);
+        System.out.println(ans);
+    }
+    static int search(int arr[],int target,int start,int end){
+        if(start>end){
+            return -1;
+        }
+        int mid=start+(end-start)/2;
+
+        if(arr[mid] == target){
+            return mid;
+        }
+        if(target < arr[mid]){
+            return search( arr, target,start,mid-1);
+        }
+        else {
+
+            return search(arr, target, mid + 1, end);
+        }
+
+    }
+}
+output:-
+5
+...................................................................recursion one line formula...................................
+public class Finbnoci_Recursion {
+    public static void main(String[] args) {
+//        int ans=fibo(4);
+//        System.out.println(ans);
+        System.out.println(fiboFormula(50));
+    }
+
+    static int fiboFormula(int n){
+        //just for demo,use long instead.
+        return (int) (Math.pow(((1+Math.sqrt(5))/2),n)/Math.sqrt(5));
+    }
+    static int fibo(int n){
+
+
+        //base condition
+        if(n < 2){
+            return n;
+        }
+
+        return fibo(n-1)+fibo(n-2);
+    }
+}
+
+.........................................................    Bitwise Operator .....................................................
+
+
+public class Bitwise_FindUnique {
+    public static void main(String[] args) {
+        int arr[]= {2,4,3,4,2,7,3};
+        System.out.println(uique(arr));
+    }
+    static int uique(int arr[]){
+        int unique=0;
+
+        for(int n :arr){           // : this symbol meaning is (in)
+            unique ^= n;	   // ^=  this symbeol denotes (xoR)
+        }
+
+        return unique;
+    }
+}
+output:-
+7
+.............................................................prime numbers check........................................
+
+public class Prime_Number {
+    public static void main(String[] args) {
+        int n=200;
+        for (int i=1;i<=n;i++){
+            System.out.println(i+ " "+isprime(i));
+        }
+
+
+    }
+    static  boolean isprime(int n){
+        if(n<=1){
+            return false;
+        }
+        int c=2;
+        while (c * c <=n){
+            if(n % c == 0){
+                return false;
+            }
+            else{
+                c++;
+            }
+        }
+        return true;
+    }
+}
+.......................................................   Merge sort   .....................................................................
+import java.util.Arrays;
+
+public class Merge_Demo {
+    public static void main(String[] args) {
+        int arr[] = {5, 88, 4, 12, 32, 48, 75};
+
+        mergesort(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void mergesort(int arr[], int start, int end) {
+        if (start < end) {
+            int mid = start + (end - start) / 2;
+            mergesort(arr, start, mid);
+            mergesort(arr, mid + 1, end);
+            merge(arr, start, mid, end);
+        }
+    }
+
+    static void merge(int arr[], int start, int mid, int end) {
+        int n1 = mid - start + 1;
+        int n2 = end - mid;
+        int startarr[] = new int[n1];
+        int endarr[] = new int[n2];
+        //for copy values
+        for (int x = 0; x < n1; x++) {
+            startarr[x] = arr[start + x];
+        }
+        for (int x = 0; x < n2; x++) {
+            endarr[x] = arr[mid + 1 + x];
+        }
+
+        int i = 0;
+        int j = 0;
+        int k = start;
+
+        while (i < n1 && j < n2) {
+            if (startarr[i] <= endarr[j]) {
+                arr[k] = startarr[i];
+                i++;
+            } else {
+                arr[k] = endarr[j];
+                j++;
+            }
+            k++;
+        }
+           while(i<n1){
+               arr[k] = startarr[i];
+               i++;
+               k++;
+           }
+           while(j<n2){
+               arr[k]=endarr[j];
+               j++;
+               k++;
+           }
+    }
+}
+outpt:-
+
+[4, 5, 12, 32, 48, 75, 88]
+.......................................................  Quick Sort Algorithm  ..........................................
+
+
+import java.util.Arrays;
+
+public class QuickSort {
+    public static void main(String[] args) {
+
+        int arr[]={5,4,3,2,1};
+        sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void sort(int nums[],int low ,int high){
+        if(low >= high){
+            return;
+        }
+        int s=low;
+        int e=high;
+        int m = s+(e-s)/2;
+        int pivot=nums[m];
+//also a reason why if it is already sorted it will not swap.
+        while(s <= e) {
+
+            while (nums[s] < pivot) {
+                s++;
+            }
+            while (nums[e] > pivot) {
+                e--;
+            }
+
+            if (s <= e) {
+                int temp = nums[s];
+                nums[s] = nums[e];
+                nums[e] = temp;
+                s++;
+                e--;
+            }
+        }
+        // now my pivot is at correct index please sort two halfs.
+        sort(nums,low,e);
+        sort(nums,s,high);
+
+
+    }
+}
+outp:-
+[1,2,3,4,5]
+
+..........................................      Recursion Subset, Subsequence, String Questions		.........................................
+
+--> Remove 'a' character in the given String and print output.without recursion method this one ?
+
+
+import java.util.Arrays;
+
+public class Demo {
+    public static void main(String[] args) {
+
+        System.out.println(remove("bcaabca"));
+    }
+    
+    static String remove(String s){
+        String ans=" ";
+
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i) != 'a'){
+                ans = ans+ s.charAt(i);
+
+            }
+        }
+        return ans;
+    }
+}
+outp:-
+bcbc
+.....................just convert s to t ..........................
+
+import java.util.Arrays;
+
+public class Demo {
+    public static void main(String[] args) {
+
+
+        String s="sgsvaesdv";
+        String ans=" ";
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i) == 's'){
+                ans=ans+'t';
+
+            }else{
+                ans=ans+s.charAt(i);
+            }
+        }
+        System.out.println(ans);
+    }
+
+
+}
+............................................................       SubString         .........................................................
+
+public class SubString {
+    public static void main(String[] args) {
+        skip(" ","baccdahiadea");
+    }
+    static void skip(String prossed,String unprocessed){
+        if(unprocessed.isEmpty()){
+            System.out.println(prossed);
+            return;
+        }
+        char ch=unprocessed.charAt(0);
+        if(ch =='a'){
+            skip(prossed,unprocessed.substring(1));
+        }else{
+            skip(prossed+ch,unprocessed.substring(1));
+        }
+    }
+}
+output:-
+bccdhide
+......................................................
+
+import java.util.Arrays;
+
+public class Demo {
+    public static void main(String[] args) {
+      substring(" ","sasbsjbassjobsaojbn");
+
+    }
+    static void substring(String processed,String unprocessed){
+        if(unprocessed.isEmpty()){
+            System.out.println(processed);
+            return;
+        }
+        char ch=unprocessed.charAt(0);
+        if(ch == 's'){
+            substring(processed,unprocessed.substring(1));
+        }else{
+            substring(processed+ch,unprocessed.substring(1));
+        }
+    }
+
+}
+
+output:-
+abjbajobaojbn
+...........................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

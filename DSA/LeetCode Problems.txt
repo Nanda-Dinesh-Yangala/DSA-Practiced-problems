@@ -1,0 +1,396 @@
+LeetCode Problems
+
+......................................................................... Leetcode problems ..................................................................................... 
+1:-
+
+There is a programming language with only four operations and one variable X:
+
+++X and X++ increments the value of the variable X by 1.
+--X and X-- decrements the value of the variable X by 1.
+Initially, the value of X is 0.
+
+Given an array of strings operations containing a list of operations, return the final value of X after performing all the operations.
+
+Example 1:
+
+Input: operations = ["--X","X++","X++"]
+Output: 1
+Explanation: The operations are performed as follows:
+Initially, X = 0.
+--X: X is decremented by 1, X =  0 - 1 = -1.
+X++: X is incremented by 1, X = -1 + 1 =  0.
+X++: X is incremented by 1, X =  0 + 1 =  1.
+
+solution:-------------
+
+
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+  
+
+        int result=0;
+        for(int i=0;i<operations.length;i++){
+            String temp=operations[i];
+            if(temp.equals("X++") || temp.equals("++X")){
+                result++;
+            }
+            else{
+                result--;
+            }
+        }
+            return result;
+
+    }
+    
+}
+
+.......................................................2........................................................................................................
+....You are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.
+
+Return the score of s.
+
+ 
+
+Example 1:
+
+Input: s = "hello"
+
+Output: 13
+
+Explanation:
+
+The ASCII values of the characters in s are: 'h' = 104, 'e' = 101, 'l' = 108, 'o' = 111. So, the score of s would be |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111| = 3 + 7 + 0 + 3 = 13.
+
+Example 2:
+
+Input: s = "zaz"
+
+Output: 50
+
+Explanation:
+
+The ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.
+
+ 
+
+Constraints:
+
+2 <= s.length <= 100
+s consists only of lowercase English letters.
+
+
+solution:---------
+
+class Solution {
+    public int scoreOfString(String s) {
+         int ans=0;
+       for(int i=0;i<s.length()-1;i++){
+            int n1=i;
+            int n2=i+1;
+           char a=s.charAt(n1);
+           char b=s.charAt(n2);
+          //  int aascii=first;
+           // int bascii=second;
+          //  int temp=Math.abs(aascii - bascii);
+           int temp=Math.abs(a - b);
+           ans= ans + temp;
+          
+       } 
+       return(ans);
+    }
+}
+..............................................................................................
+
+find the even digits in the array?
+
+public class Leetcode_2problem {
+
+    public static void main(String[] args) {
+        int nums[]={12,345,2,61,7896};
+
+        System.out.println(findNumber(nums));
+    }
+
+    static int findNumber(int[]nums){
+
+        int count=0;
+
+        for(int i=0;i<nums.length;i++){			// we can do like this also r else below one.
+//            if(String.valueOf(nums[i]).length() % 2==0){
+//                count++;
+//            }
+
+            if(Integer.toString(nums[i]).length()%2==0){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+outp:-
+3
+................................................................................................................................................
+ 							Richest Customer Wealth
+
+Q.  You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
+
+Example 1:
+
+Input: accounts = [[1,2,3],[3,2,1]]
+Output: 6
+Explanation:
+1st customer has wealth = 1 + 2 + 3 = 6
+2nd customer has wealth = 3 + 2 + 1 = 6
+Both customers are considered the richest with a wealth of 6 each, so return 6.
+ 
+
+ import static java.lang.Integer.MIN_VALUE;
+
+public class Demo1 {
+    public static void main(String[] args) {
+
+        int arr[][] = {{1,2,3},
+                       {3,40,1},
+                       {4,5,1}};
+        System.out.println(wealth(arr));
+
+    }
+    static int wealth(int accounts[][]){
+        //person = row
+        //account= col
+        int ans=Integer.MIN_VALUE;
+
+        for(int row=0;row<accounts.length;row++){
+            //when u start a new col,take a new sum for that row.
+            int sum=0;
+            for(int col=0;col<accounts[row].length;col++){
+                sum +=accounts[row][col];
+            }
+            //now we have sum of accounts of row
+            //check with overall ans
+            if(sum>ans){
+                ans=sum;
+            }
+
+        }return ans;
+    }
+}
+..........................................................Find Smallest Letter Greater Than Target...........................................
+https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
+
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        
+         int start=0;
+        int end=letters.length-1;
+    
+        while(start <= end){
+
+            int mid=start+(end-start)/2;
+            
+          
+            if(target < letters[mid]){
+                end=mid-1;
+            }
+            else{
+                start=mid+1;
+            }
+
+
+        }
+
+         return letters[start % letters.length];
+
+    }
+}
+...........................................Do it again unable to understand this one Binary search .....................................
+
+
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+ 
+
+
+// do it again watch kunql kushwa channel in binary search for better understanding.
+
+        int ans[]={-1,-1};
+        //check for first occurence of target first.
+        int start=search(nums,target,true);
+        int end=search(nums,target,false);
+
+        ans[0]=start;
+        ans[1]=end;
+        return ans;
+        }
+
+
+
+       // this function just returns the index value of target.
+    int search(int nums[],int target,boolean findstartindex){
+
+        int ans=-1; // potential ans
+        int start=0;
+        int end=nums.length-1;
+
+        while( start <= end){
+            int mid = start+(end-start)/2;
+
+            if(target < nums[mid]){
+                end=mid-1;
+            } else if (target > nums[mid]) {
+                start=mid+1;
+            }
+            else{
+                //potential ans found.
+               ans=mid;
+               if(findstartindex == true){
+                   end=mid-1;
+               } else{
+                   start=mid+1;
+               }
+            }
+        }
+        return ans;
+    
+    }
+}
+..............................................................268. Missing Number....................................................................
+
+class Solution {
+    public int missingNumber(int[] nums) {
+   int i=0;
+   while(i<nums.length){
+    int correct=nums[i];
+
+    if(nums[i]<nums.length && nums[i] != nums[correct]){
+        swap(nums,i,correct);
+    }
+    else{
+        i++;
+    }
+
+      }
+      for(int index=0;index<nums.length;index++){
+        if(nums[index] != index){
+            return index;
+        }
+      }
+      return nums.length;
+    }
+
+    public void swap(int []nums,int first,int second){
+    int temp=nums[first];
+    nums[first]=nums[second];
+    nums[second]=temp;
+
+  }
+
+    }
+Accepted
+
+Case 1
+Case 2
+Input
+nums =     [4,3,2,7,8,2,3,1]
+Output :-  	[5,6]
+Expected:-	[5,6]
+
+....................................................287. Find the Duplicate Number.................................................................
+
+https://leetcode.com/problems/find-the-duplicate-number/description/
+
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int i=0;
+       
+            while(i<nums.length){
+                if(nums[i] != i+1){ 
+            int correct=nums[i]-1;
+            if(nums[i] != nums[correct]){
+                swap(nums,i,correct);
+            }else{
+                return nums[i];
+            }
+            }else{
+             i++;
+          }
+        }
+         
+       
+        
+        return -1;
+    }
+    void swap(int nums[],int first,int second){
+        int temp=nums[first];
+        nums[first]=nums[second];
+        nums[second]=temp;
+    }
+}
+
+.........................................................Find All Duplicates in an Array.......................................
+https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        int i=0;
+        while(i<nums.length){
+            int correct=nums[i]-1;
+            if(nums[i] != nums[correct]){
+                swap(nums,i,correct);
+            }else{
+                i++;
+            }
+        }
+        List<Integer>ans=new ArrayList<>();
+        for(int index=0;index<nums.length;index++){
+            if(nums[index] != index+1){
+                ans.add(nums[index]);
+            }
+        }
+        return ans;
+
+    }
+    void swap (int nums[],int first,int second){
+        int temp=nums[first];
+        nums[first]=nums[second];
+        nums[second]=temp;
+    }
+}
+...................................................... Set Mismatch..................................................................................
+
+https://leetcode.com/problems/set-mismatch/submissions/1464938855/
+
+
+.............................................................firstMissingPositive.........................................................................
+
+
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        
+        int i=0;
+      while(i<nums.length){
+            int correct = nums[i]-1;
+        if(nums[i]>0&&nums[i] <=nums.length && nums[i]!= nums[correct]){
+            swap(nums,i,correct);
+        }else{
+            i++;
+        }
+      }
+      for(int index=0;index<nums.length;index++){
+        if(nums[index] != index+1){
+            return index+1;
+        }
+      }
+      return nums.length+1  ;
+    }
+    void swap(int nums[],int first,int second){
+         int temp=nums[first];
+         nums[first]=nums[second];
+         nums[second]=temp;
+
+    }
+}
